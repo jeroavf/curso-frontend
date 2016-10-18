@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+        </script>
+        <script>
+            var jsonArray = {
+                "data": [
+                    {
+                        "nome": "ERIKA CHRISTINE CAVALCANTE ROCHA DE QUEIROZ",
+                        "enderecos": [
+                            {
+                                "bairro": "Águas Claras",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-111111111"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Vanessa",
+                            "area": "ambiental"
+                        }
+                    },
+                    {
+                        "nome": "BEATRIZ OLIVEIRA MARCIEL",
+                        "enderecos": [
+                            {
+                                "bairro": "Sobradinho",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-22222222"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Luiz",
+                            "area": "corrupção"
+                        }
+                    },
+                    {
+                        "nome": "JOSE AIRTON BARBAROTO",
+                        "enderecos": [
+                            {
+                                "bairro": "Ceilândia",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-333333333"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Jéssica",
+                            "area": "criminal"
+                        }
+                    }
+                ]
+            };
+
+            //========= Recuperando cada tipo de dado
+
+            //Buscando o "nome" da "pessoasRelacionadas" da "Beatriz"
+            //Resultado: "Luiz"
+            console.log("jsonArray -> ", jsonArray.data[1].pessoasRelacionadas.nome);
+
+
+            //========= Manipulando o JSON (CRUD DADOS)
+
+            //CREATE -> Inserindo um novo telefone no "JOSE AIRTON BARBAROTO"
+            jsonArray.data[2].telefones.push("61-44444444");
+            console.log("jsonArray CREATE -> ", jsonArray.data[2].telefones);
+
+            //READ -> Listando apenas os nomes de cada um
+            for (var i = 0; i < jsonArray.data.length; i++) {
+                console.log("jsonArray READ -> ", jsonArray.data[i].nome);
+            }
+
+            //UPDATE -> Atualizando o bairro da "BEATRIZ OLIVEIRA MARCIEL"
+            jsonArray.data[1].enderecos[0].bairro = "Taguatinga";
+            console.log("jsonArray UPDATE -> ", jsonArray.data[1].enderecos[0].bairro);
+
+            //DELETE 1º -> Removendo o endereço da "ERIKA CHRISTINE CAVALCANTE ROCHA DE QUEIROZ"
+            jsonArray.data[0].enderecos = [];
+            console.log("jsonArray DELETE 1º -> ", jsonArray.data[0].enderecos);
+
+            //DELETE 2º -> Removendo a "BEATRIZ OLIVEIRA MARCIEL"
+            jsonArray.data.splice(1, 1);
+            console.log("jsonArray DELETE 2º -> ", jsonArray.data[0].enderecos);
+
+            //Imprimindo no HTML
+            document.body.innerHTML = JSON.stringify(jsonArray);
+
+        </script>
+
+    </body>
+</html>

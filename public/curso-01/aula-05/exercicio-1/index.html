@@ -1,0 +1,29 @@
+<html ng-app="mpu">
+    <head>
+        <title>Execícios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/curso-frontend/mpfico.ico" />
+
+        <!-- AngularJS -->
+        <script src="../../../assets/js/angular.min.js" type="text/javascript"></script>
+
+        <script>
+            angular.module('mpu', []); 
+            
+            angular.module('mpu').controller("Ctrl", function($scope){
+                $scope.nome = "Marcelo";
+            });                
+        </script>
+
+    </head>
+
+    <body>
+
+        <div ng-controller="Ctrl">
+            {{ nome }}
+        </div>
+
+    </body>
+
+</html>

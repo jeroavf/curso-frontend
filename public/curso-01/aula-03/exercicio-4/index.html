@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+        </script>
+        <script>
+            var jsonArray = {
+                "data": [
+                    {
+                        "nome": "ERIKA CHRISTINE CAVALCANTE ROCHA DE QUEIROZ",
+                        "enderecos": [
+                            {
+                                "bairro": "Águas Claras",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-111111111"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Vanessa",
+                            "area": "ambiental"
+                        }
+                    },
+                    {
+                        "nome": "BEATRIZ OLIVEIRA MARCIEL",
+                        "enderecos": [
+                            {
+                                "bairro": "Sobradinho",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-22222222"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Luiz",
+                            "area": "corrupção"
+                        }
+                    },
+                    {
+                        "nome": "JOSE AIRTON BARBAROTO",
+                        "enderecos": [
+                            {
+                                "bairro": "Ceilândia",
+                                "estado": "Distrito Federal"
+                            }
+                        ],
+                        "telefones": [
+                            "61-333333333"
+                        ],
+                        "pessoasRelacionadas": {
+                            "nome": "Jéssica",
+                            "area": "criminal"
+                        }
+                    }
+                ]
+            };
+
+            //========= Recuperando cada tipo de dado
+
+            //Busque o 'bairro' do "JOSE AIRTON BARBAROTO"
+            console.log("jsonArray -> ", "?????");
+
+
+            //========= Manipulando o JSON (CRUD DADOS)
+
+            //CREATE -> Insira uma "pessoasRelacionadas" de nome="joao" e area="ambiental" no objeto da "BEATRIZ OLIVEIRA MARCIEL"
+            //????
+
+            //UPDATE -> Atualize o telefone da "ERIKA CHRISTINE CAVALCANTE ROCHA DE QUEIROZ" para "3333"
+            //????
+
+            //DELETE 2º -> Remova o objeto completo do "JOSE AIRTON BARBAROTO"
+            //????
+
+            //Imprimindo no HTML
+            document.body.innerHTML = JSON.stringify(jsonArray);
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var jsonPessoa = {
+                "nomeReal": "JUCIE OLIVEIRA MARCIEL",
+                "numeros": [
+                    "1111",
+                    "2222",
+                    "3333"
+                ],
+                "habito": {
+                    "fuma": true
+                },
+                "enderecos": [
+                    {
+                        "bairro": "Águas Claras",
+                        "estado": "Distrito Federal"
+                    }, {
+                        "bairro": "Sobradinho",
+                        "estado": "Distrito Federal"
+                    }, {
+                        "bairro": "Ceilândia",
+                        "estado": "Distrito Federal"
+                    }
+                ]
+            };
+            
+            //========= Manipulando o JSON (CRUD OBJETO)
+
+            //Insira um novo elemento "jogaBola" = true
+            //?????
+
+            //Insira um novo objeto "corre" com o elemento "20km" = true, e "10km" = false
+            //?????
+
+            //Remva o objeto de "enderecos" onde tem o bairro "Sobradinho"
+            //?????
+            
+            //Imprimindo no HTML
+            document.body.innerHTML = JSON.stringify(jsonPessoa);
+        </script>
+
+    </body>
+</html>

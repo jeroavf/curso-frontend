@@ -1,0 +1,15 @@
+#corpo { margin-top: 80px;}
+#corpo .page-body { margin-top: 30px;}
+#corpo .page-body form {background: #eee; padding: 20px; border: 1px solid #ccc; }
+
+/*Estilizando a barra superior*/
+
+.navbar { background: #009688; min-height: 40px; }
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a { color: #FFF;}
+.navbar-inverse .navbar-nav > .active > a { background-color: #5aafa7; }
+
+.navbar-inverse a.navbar-brand { height: 40px; }
+
+.navbar-inverse a.navbar-brand,
+.navbar-nav > li > a { padding: 10px; }

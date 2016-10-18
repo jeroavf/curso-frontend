@@ -1,0 +1,22 @@
+div.centro {
+    border: 1px solid;
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    background: #eee;
+}
+
+a.btn {
+    text-decoration: none;
+    color: #FFF;
+    background: #F44336;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    float: left;
+    transition: 1s ease 0s;
+}
+
+a.btn:hover {
+    background: #673AB7;
+}

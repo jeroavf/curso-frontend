@@ -1,0 +1,43 @@
+<html ng-app="mpu">
+    <head>
+        <title>Execícios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/curso-frontend/mpfico.ico" />
+
+        <!-- AngularJS -->
+        <script src="../../../assets/js/angular.min.js" type="text/javascript"></script>
+
+        <script>
+            angular.module('mpu', []); 
+            
+            angular.module('mpu').directive("alteraCorParaVerde", function(){
+                return {
+                    link: main
+                };
+                
+                function main(scope, elemento, atributos){
+                    
+                    var divComADiretiva = elemento;
+                    var btn = divComADiretiva.find("button");
+                    
+                    btn.on("click", function(){
+                        elemento.find("p").css("color", "green");
+                    });
+                }
+            }); 
+            
+        </script>
+
+    </head>
+
+    <body>
+
+        <div altera-cor-para-verde>
+            <button>Clique aqui para adicionar fundo Azul</button>
+            <p>Eu sou verde</p>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,6 @@
+html, body { height: 100%; }
+
+body { position: relative; }
+
+div#sobre { height: 100%; padding: 30px 0 0 0; }
+div#contato { height: 100%; padding: 30px 0 0 0; }

@@ -1,0 +1,12 @@
+Instalar o Bower:
+ - npm install -g bower
+
+Instalar o Deployd (https://github.com/deployd/deployd)
+ - npm install deployd -g
+ - Na pasta do projeto pelo CMD, digite
+ -- dpd create unicodb
+ -- cd unicodb
+ -- dpd
+ -- dashboard
+
+-- Obs: precisa do "mongod" no PATH do Windows -> lá nas Variáveis de Ambiente -> adicionar ao PATH ";F:\devweb\mongo-db\bin"

@@ -1,0 +1,46 @@
+<html ng-app="mpu">
+    <head>
+        <title>Execícios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/curso-frontend/mpfico.ico" />
+
+        <!-- AngularJS -->
+        <script src="../../../assets/js/angular.min.js" type="text/javascript"></script>
+
+        <script>
+            angular.module('mpu', []);
+
+            //SERVICE
+            angular.module('mpu').factory("DataService", function (){
+                return {
+                    telefones: telefones
+                };
+
+                //------ Detalhes
+
+                function telefones(){
+                    return ["61 85098546", "61 99997777", "61 33332222"];
+                }
+            });
+
+            angular.module('mpu').controller("Extrajudicial", function (DataService){
+                var vm = this;
+                vm.telefones = DataService.telefones();
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div ng-controller="Extrajudicial as exJud">
+            <ul>
+                <li ng-repeat="tel in exJud.telefones">
+                    {{tel}}
+                </li>
+            </ul>
+        </div>
+    </body>
+
+</html>

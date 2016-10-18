@@ -1,0 +1,8 @@
+div.centro {
+    border: 1px solid;
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+div.caixa {color: red;background: #ccc;width: 200px;border: 1px solid #000;height: 100px;margin: 50px 0 0 350px;float: left;}

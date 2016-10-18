@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var jsonPessoa = {
+                "nomeReal": "JUCIE OLIVEIRA MARCIEL",
+                "numeros": [
+                    "1111",
+                    "2222",
+                    "3333"
+                ],
+                "habito": {
+                    "fuma": true
+                },
+                "enderecos": [
+                    {
+                        "bairro": "Águas Claras",
+                        "estado": "Distrito Federal"
+                    }, {
+                        "bairro": "Sobradinho",
+                        "estado": "Distrito Federal"
+                    }, {
+                        "bairro": "Ceilândia",
+                        "estado": "Distrito Federal"
+                    }
+                ]
+            };
+            
+            //========= Recuperando cada tipo de dado
+
+            //Exiba o "nomeReal"
+            console.log("nomeReal -> ", "???????");
+
+            //Exiba o "numeros" que tem "2222"
+            console.log("numeros -> ", "???????");
+
+            //Exiba o valor do "habito" "fuma"
+            console.log("fuma -> ", "???????");
+
+            //Exiba o valor "Ceilândia"
+            console.log("enderecos -> ", "???????");
+
+            //Imprimindo no HTML
+            document.body.innerHTML = JSON.stringify(jsonPessoa);
+        </script>
+
+    </body>
+</html>

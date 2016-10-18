@@ -1,0 +1,20 @@
+div.centro {
+    border: 1px solid;
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    background: #eee;
+}
+
+div.caixa {text-align: center;background: #FFF;position: relative;width: 300px;border: 1px solid #ccc;height: 150px;box-shadow: 5px 5px 10px 1px #ccc;margin: 50px 0 0 350px;float: left;}
+
+.aba {
+    width: 60px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    position: absolute;
+    top: -26px;
+    left: 20px;
+    background: #FFF;
+}

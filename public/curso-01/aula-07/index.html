@@ -1,0 +1,50 @@
+<html ng-app="centroSocial">
+    <head>
+        <title>Centro Social</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!------------------------ CSS -------------------->
+        
+        <!-- Bootstrap -->
+        <link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+        
+        <!-- Ícones -->
+        <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Aplicação -->
+        <link href="assets/css/estilo.css" rel="stylesheet" type="text/css">
+        
+        <!------------------------ JS -------------------->
+        
+        <!-- jQuery e Bootstrap -->
+        <script src="../../assets/js/jquery.min.js"></script>
+        <script src="../../assets/js/bootstrap.js"></script>
+
+        <!-- AngularJS -->
+        <script src="../../assets/js/angular.min.js"></script>
+        <script src="../../assets/js/angular-locale_pt-br.js"></script>
+        
+        <!-- AngularJS - Rotas na URL -->
+        <script src="../../assets/js/angular-route.min.js"></script>
+        
+        <!-- AngularJS - Acessar banco de dados -->
+        <script src="../../assets/js/angular-resource.min.js"></script>
+
+        <!------------------------ Aplicação -------------------->
+        
+        <!-- Configurações iniciais -->
+        <script src="app/main.js"></script>
+        
+        <!-- Aplicação - Módulos -->
+        <script src="app/modulos/pacientes/PacientesController.js"></script>
+        <script src="app/modulos/pacientes/PacientesDataService.js"></script>
+        
+    </head>
+
+    <body>
+        <!--Corpo-->
+        <div ng-view></div>
+    </body>
+
+</html>

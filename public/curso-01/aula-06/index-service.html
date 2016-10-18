@@ -1,0 +1,48 @@
+<html ng-app="mpu">
+    <head>
+        <title>Execícios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/curso-frontend/mpfico.ico" />
+
+        <!-- AngularJS -->
+        <script src="../../assets/js/angular.min.js" type="text/javascript"></script>
+
+        <script>
+            angular.module('mpu', []);
+
+            //SERVICE
+            angular.module('mpu').service("DataService", function (){
+                var vm = this;
+                vm.listaExtrajud = listaExtrajud;
+                
+                //------ Detalhes
+                
+                function listaExtrajud(){
+                    return [
+                        {nome: "André", sigla: "AN"},
+                        {nome: "Gleidson", sigla: "GL"}
+                    ];
+                }
+            });
+
+            angular.module('mpu').controller("Extrajudicial", function (DataService){
+                var vm = this;
+                vm.lista = DataService.listaExtrajud();
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div ng-controller="Extrajudicial as exJud">
+            <ul>
+                <li ng-repeat="pessoa in exJud.lista">
+                    {{pessoa.nome}}
+                </li>
+            </ul>
+        </div>
+    </body>
+
+</html>

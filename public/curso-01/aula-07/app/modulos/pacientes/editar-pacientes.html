@@ -1,0 +1,91 @@
+<!--Cabeçalho-->
+<nav ng-include="'app/layout/header.html'" class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+<!--Corpo-->
+<div class="container has-header has-footer">
+
+    <h3 class="text-muted">Pacientes</h3>
+
+    <!--Abas-->
+    <nav>
+        <ul class="nav nav-pills">
+            <li><a href="#/pacientes/listar">Listar</a></li>
+            <li ng-class="{'active': !isTelaDeAlteracao()}"><a href="#/pacientes/incluir">Incluir</a></li>
+            <li class="active" ng-if="isTelaDeAlteracao()"><a href="#/pacientes/alterar/{{isTelaDeAlteracao()}}">Alterar</a></li>
+        </ul>
+    </nav>
+
+    <!--Conteúdo-->
+    <form class="conteudo" name="formPaciente">
+        <h3>Dados básicos</h3>
+
+        <div class="form-group row">
+
+            <div class='col-md-8'>
+                <label>Nome</label>
+                <input type="text" autocomplete="off" class="form-control" name="nome" ng-model="paciente.nome">
+            </div>
+
+            <div class="col-md-4">
+                <label>Estado</label>
+                <select class="form-control" name="estado" ng-model="paciente.estado">
+                    <option value="DF">DF</option>
+                    <option value="RJ">RJ</option>
+                    <option value="SP">SP</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <h3>Saúde</h3>
+
+        <div class="form-group">
+            <label>Hábitos</label>
+            <div>
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="fuma" name="habitos.fuma" ng-model="paciente.habitos.fuma"> Fuma?
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" value="bebe" name="habitos.bebe" ng-model="paciente.habitos.bebe"> Bebe?
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Pratica exercícios?</label>
+            <div>
+                <label class="radio-inline">
+                    <input type="radio" ng-value="true" name="praticaExecicios" ng-model="paciente.praticaExecicios"> Sim
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-value="false" name="praticaExecicios" ng-model="paciente.praticaExecicios"> Não
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <!--Respostas do servidor-->
+            <div class='alert alert-success' ng-show='respostaFormulario'>{{respostaFormulario}}</div>
+
+            <!--Botão de submeter o formulário-->
+            <button type="submit" class="btn btn-success" ng-if="!isTelaDeAlteracao()" ng-click="incluir()">Incluir</button>
+            <button type="submit" class="btn btn-warning" ng-if="isTelaDeAlteracao()" ng-click="alterar()">Alterar</button>
+
+        </div>
+
+    </form>
+
+    <div class="col-md-6">
+        <pre>paciente: {{ paciente | json }}</pre>
+    </div><!--
+    <div class="col-md-6">
+        <pre>{{ formPaciente | json }}</pre>
+    </div>-->
+
+</div>
+<!--FIM:aba-listar-->
+
+<!--Rodapé-->
+<footer ng-include="'app/layout/footer.html'" class="footer"></footer>

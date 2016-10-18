@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+            var jsonPessoa = {
+                "nome": "JUCIE OLIVEIRA MARCIEL",
+                "telefones": [
+                    "61-1111111",
+                    "61-2222222",
+                    "61-33333333"
+                ],
+                "pessoasRelacionadas": {
+                    "nome": "Jéssica",
+                    "area": "criminal"
+                },
+                "enderecos": [{
+                        "bairro": "Águas Claras",
+                        "estado": "Distrito Federal"
+                    },{
+                        "bairro": "Sobradinho",
+                        "estado": "Distrito Federal"
+                    }, {
+                        "bairro": "Ceilândia",
+                        "estado": "Distrito Federal"
+                    }
+                ]
+            };
+            
+            //========= Manipulando o JSON (CRUD OBJETO)
+
+            //Inserindo um novo campo "idade"
+            jsonPessoa.idade = "18 anos";
+
+            //Inserindo um novo campo objeto "hábitos"
+            jsonPessoa.habitos = { "fuma": true, "bebe": false };
+
+            //Removendo o array "enderecos"
+            delete jsonPessoa.enderecos;
+
+            //Removendo o primeiro telefone. Resultado: "null"
+            delete jsonPessoa.telefones[0];
+            
+            //Imprimindo no HTML
+            document.body.innerHTML = JSON.stringify(jsonPessoa);
+            console.log(jsonPessoa)
+            
+            
+        </script>
+
+    </body>
+</html>

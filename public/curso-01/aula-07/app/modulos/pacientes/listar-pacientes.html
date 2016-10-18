@@ -1,0 +1,89 @@
+<!--Cabeçalho-->
+<nav ng-include="'app/layout/header.html'" class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+<!--Corpo-->
+<div class="container has-header">
+
+    <h3>{{tituloDaTela}}</h3>
+
+
+
+<!--    <h3 class="text-muted">Pacientes</h3>-->
+
+    <!--Abas-->
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#/pacientes/listar">Listar</a></li>
+            <li><a href="#/pacientes/incluir">Incluir</a></li>
+        </ul>
+    </nav>
+
+    <!--Conteúdo-->
+    <div class="aba aba-listar">
+
+        <div class="row">
+            <div class="col-sm-12">
+
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <!--Respostas do servidor-->
+                <div class='alert alert-success' ng-show='respostaTabela'>{{respostaTabela}}</div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Estado</th>
+                                <th>Hábitos</th>
+                                <th>Pratica Exercícios</th>
+                                <th>#</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="paciente in dadosTabela">
+                                <td>{{paciente.nome}}</td>
+                                <td>{{paciente.estado}}</td>
+                                <td>
+                                    <div class='label label-info' ng-if='paciente.habitos.fuma'>Fuma</div>
+                                    <div class='label label-info' ng-if='paciente.habitos.bebe'>Bebe</div>
+                                </td>
+                                <td>
+                                    <div class='text-success' ng-if='paciente.praticaExecicios'>Sim</div>
+                                    <div class='text-danger' ng-if='!paciente.praticaExecicios'>Não</div>
+                                </td>
+                                <td>
+                                    <a href='#/pacientes/alterar/{{paciente.id}}' class="btn btn-warning" title="Alterar">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href='' data-toggle="modal" data-target="#confirmar-exclusao-paciente" ng-click='confirmarExclusao(paciente)' class="btn btn-danger" title="Excluir">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div> 
+    <!--FIM:aba-listar-->
+    
+    <!--Modal de confirmação de exclusão-->
+    <div ng-include="'app/modulos/pacientes/confirmar-exclusao-paciente.html'"></div>
+
+</div>
+
+<!--Rodapé-->
+<footer ng-include="'app/layout/footer.html'" class="footer"></footer>
